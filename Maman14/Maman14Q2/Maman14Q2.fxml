@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+   <top>
+      <GridPane prefHeight="43.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="0.0" prefWidth="55.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="111.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="75.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="240.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="493.0" minWidth="10.0" prefWidth="121.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lexeme :" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="2.0" top="12.0" />
+               </GridPane.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Definition :" GridPane.columnIndex="2" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="10.0" top="12.0" />
+               </GridPane.margin>
+            </Text>
+            <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="119.0" spacing="5.0" GridPane.columnIndex="4">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnAdd" prefHeight="24.0" prefWidth="109.0" text="Add">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <GridPane.margin>
+                  <Insets left="4.0" top="-8.0" />
+               </GridPane.margin>
+            </HBox>
+            <TextField fx:id="lexeme" promptText="Insert lexeme " GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets top="4.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="definition" promptText="Insert definition" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets top="4.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+      </GridPane>
+   </top>
+   <center>
+      <ListView fx:id="list" prefHeight="145.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <VBox prefHeight="36.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="44.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lexeme :">
+                     <HBox.margin>
+                        <Insets top="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="lexemeSD" prefHeight="26.0" prefWidth="255.0" promptText="Insert lexeme " />
+                  <Button mnemonicParsing="false" onAction="#btnSeach" prefHeight="26.0" prefWidth="80.0" text="Search" />
+                  <Button mnemonicParsing="false" onAction="#btnDelete" prefHeight="26.0" prefWidth="80.0" text="Delete" />
+                  <Button mnemonicParsing="false" onAction="#btnEdit" prefHeight="26.0" prefWidth="80.0" text=" Edit">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="2.0" top="4.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>
